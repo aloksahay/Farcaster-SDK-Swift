@@ -1,0 +1,52 @@
+# Xcode
+#
+build/
+DerivedData/
+*.xcworkspace
+xcuserdata/
+!default.xcworkspace
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+#
+.build/
+.swiftpm/xcode/
+
+# CocoaPods
+#
+Pods/
+.package.resolved
+
+# Carthage
+#
+Carthage/Build/
+
+# Fastlane
+#
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# CodeKit
+#
+.codekit-cache/
+
+# Xcode automatically generated files
+#
+*.mode1v3
+*.mode2v3
+*.pbxuser
+!default.pbxuser
+*.perspectivev3
+!default.perspectivev3
+*.xccheckout
+*.xcuserstate
+
+# iOS
+#
+.DS_Store
+*.swp
+*.swm
