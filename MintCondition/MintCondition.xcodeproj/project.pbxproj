@@ -13,6 +13,9 @@
 		5CBEAD262C64DCF800C2049C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5CBEAD252C64DCF800C2049C /* Base */; };
 		5CBEAD282C64DCFB00C2049C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CBEAD272C64DCFB00C2049C /* Assets.xcassets */; };
 		5CBEAD2B2C64DCFB00C2049C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 5CBEAD2A2C64DCFB00C2049C /* Base */; };
+		5CBEAD362C64E54B00C2049C /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEAD332C64E54B00C2049C /* UserManager.swift */; };
+		5CBEAD372C64E54B00C2049C /* CastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEAD342C64E54B00C2049C /* CastManager.swift */; };
+		5CBEAD382C64E54B00C2049C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEAD352C64E54B00C2049C /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		5CBEAD272C64DCFB00C2049C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CBEAD2A2C64DCFB00C2049C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CBEAD2C2C64DCFB00C2049C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CBEAD332C64E54B00C2049C /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		5CBEAD342C64E54B00C2049C /* CastManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastManager.swift; sourceTree = "<group>"; };
+		5CBEAD352C64E54B00C2049C /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		5CBEAD1D2C64DCF800C2049C /* MintCondition */ = {
 			isa = PBXGroup;
 			children = (
+				5CBEAD322C64E53B00C2049C /* Helpers */,
 				5CBEAD1E2C64DCF800C2049C /* AppDelegate.swift */,
 				5CBEAD202C64DCF800C2049C /* SceneDelegate.swift */,
 				5CBEAD222C64DCF800C2049C /* ViewController.swift */,
@@ -65,6 +72,16 @@
 				5CBEAD2C2C64DCFB00C2049C /* Info.plist */,
 			);
 			path = MintCondition;
+			sourceTree = "<group>";
+		};
+		5CBEAD322C64E53B00C2049C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5CBEAD342C64E54B00C2049C /* CastManager.swift */,
+				5CBEAD352C64E54B00C2049C /* StorageManager.swift */,
+				5CBEAD332C64E54B00C2049C /* UserManager.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +157,9 @@
 			files = (
 				5CBEAD232C64DCF800C2049C /* ViewController.swift in Sources */,
 				5CBEAD1F2C64DCF800C2049C /* AppDelegate.swift in Sources */,
+				5CBEAD362C64E54B00C2049C /* UserManager.swift in Sources */,
+				5CBEAD382C64E54B00C2049C /* StorageManager.swift in Sources */,
+				5CBEAD372C64E54B00C2049C /* CastManager.swift in Sources */,
 				5CBEAD212C64DCF800C2049C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,9 +327,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.solo.MintCondition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -335,9 +359,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.solo.MintCondition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
