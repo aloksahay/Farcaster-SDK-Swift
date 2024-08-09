@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1E398C2C661F3500FCDE82 /* Web3 in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1E398B2C661F3500FCDE82 /* Web3 */; };
+		5C1E398E2C661F3500FCDE82 /* Web3ContractABI in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1E398D2C661F3500FCDE82 /* Web3ContractABI */; };
+		5C1E39902C661F3500FCDE82 /* Web3PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1E398F2C661F3500FCDE82 /* Web3PromiseKit */; };
+		5C1E39922C661F5300FCDE82 /* Web3Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E39912C661F5300FCDE82 /* Web3Manager.swift */; };
 		5CBEAD1F2C64DCF800C2049C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEAD1E2C64DCF800C2049C /* AppDelegate.swift */; };
 		5CBEAD212C64DCF800C2049C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEAD202C64DCF800C2049C /* SceneDelegate.swift */; };
 		5CBEAD232C64DCF800C2049C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEAD222C64DCF800C2049C /* ViewController.swift */; };
@@ -20,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C1E39912C661F5300FCDE82 /* Web3Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Manager.swift; sourceTree = "<group>"; };
 		5CBEAD1B2C64DCF800C2049C /* MintCondition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MintCondition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBEAD1E2C64DCF800C2049C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CBEAD202C64DCF800C2049C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1E398E2C661F3500FCDE82 /* Web3ContractABI in Frameworks */,
+				5C1E39902C661F3500FCDE82 /* Web3PromiseKit in Frameworks */,
+				5C1E398C2C661F3500FCDE82 /* Web3 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,7 @@
 				5CBEAD352C64E54B00C2049C /* StorageManager.swift */,
 				5CBEAD332C64E54B00C2049C /* UserManager.swift */,
 				5CBEAD392C64F77D00C2049C /* ContentManager.swift */,
+				5C1E39912C661F5300FCDE82 /* Web3Manager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -103,6 +112,11 @@
 			dependencies = (
 			);
 			name = MintCondition;
+			packageProductDependencies = (
+				5C1E398B2C661F3500FCDE82 /* Web3 */,
+				5C1E398D2C661F3500FCDE82 /* Web3ContractABI */,
+				5C1E398F2C661F3500FCDE82 /* Web3PromiseKit */,
+			);
 			productName = MintCondition;
 			productReference = 5CBEAD1B2C64DCF800C2049C /* MintCondition.app */;
 			productType = "com.apple.product-type.application";
@@ -131,6 +145,9 @@
 				Base,
 			);
 			mainGroup = 5CBEAD122C64DCF800C2049C;
+			packageReferences = (
+				5C1E398A2C661F3500FCDE82 /* XCRemoteSwiftPackageReference "Web3.swift" */,
+			);
 			productRefGroup = 5CBEAD1C2C64DCF800C2049C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1E39922C661F5300FCDE82 /* Web3Manager.swift in Sources */,
 				5CBEAD232C64DCF800C2049C /* ViewController.swift in Sources */,
 				5CBEAD1F2C64DCF800C2049C /* AppDelegate.swift in Sources */,
 				5CBEAD362C64E54B00C2049C /* UserManager.swift in Sources */,
@@ -397,6 +415,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C1E398A2C661F3500FCDE82 /* XCRemoteSwiftPackageReference "Web3.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Boilertalk/Web3.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C1E398B2C661F3500FCDE82 /* Web3 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C1E398A2C661F3500FCDE82 /* XCRemoteSwiftPackageReference "Web3.swift" */;
+			productName = Web3;
+		};
+		5C1E398D2C661F3500FCDE82 /* Web3ContractABI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C1E398A2C661F3500FCDE82 /* XCRemoteSwiftPackageReference "Web3.swift" */;
+			productName = Web3ContractABI;
+		};
+		5C1E398F2C661F3500FCDE82 /* Web3PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C1E398A2C661F3500FCDE82 /* XCRemoteSwiftPackageReference "Web3.swift" */;
+			productName = Web3PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CBEAD132C64DCF800C2049C /* Project object */;
 }
