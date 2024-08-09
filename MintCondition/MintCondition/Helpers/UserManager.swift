@@ -55,7 +55,7 @@ class UserManager {
     }
     
     func fetchUser(fid: String, completion: @escaping (Result<User, Error>) -> Void) {
-        let urlString = "https://swooop-server.onrender.com/user?userFid=\(fid)"
+        let urlString = "http://192.168.1.103:3000/user?userFid=\(fid)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
@@ -97,7 +97,7 @@ class UserManager {
     
     func pollForSuccess(token: String, completion: @escaping (Result<Completion, Error>) -> Void) {
         print("We polling...")
-        let urlString = "https://swooop-server.onrender.com/sign-in/poll?pollingToken=\(token)"
+        let urlString = "http://192.168.1.103:3000/sign-in/poll?pollingToken=\(token)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
@@ -165,7 +165,7 @@ class UserManager {
     
     func signIn(completion: @escaping (Result<SignerPayload, Error>) -> Void) {
         print("Signing in...")
-        let url = URL(string: "https://swooop-server.onrender.com/sign-in")!
+        let url = URL(string: "http://192.168.1.103:3000/sign-in")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -178,6 +178,7 @@ class UserManager {
             }
             
             // Check for HTTP response status code indicating success
+                        
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1
                 completion(.failure(NSError(domain: "", code: statusCode, userInfo: [NSLocalizedDescriptionKey: "Unexpected response"])))

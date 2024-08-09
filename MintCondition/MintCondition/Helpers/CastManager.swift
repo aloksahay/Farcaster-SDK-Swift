@@ -43,7 +43,7 @@ class CastManager {
     var casts: [Cast] = []
     
     func fetchCasts(channel: String, completion: @escaping (Result<[Cast], Error>) -> Void) {
-        guard let url = URL(string: "https://swooop-server.onrender.com/feed?channel=\(channel)&pageToken=blank&api=true") else {
+        guard let url = URL(string: "http://192.168.1.103:3000/feed?channel=\(channel)&pageToken=blank&api=true") else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
