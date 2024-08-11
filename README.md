@@ -1,4 +1,4 @@
-# MushroomCloud
+# Mint Market
 Built for ETHGlobal Superhack 2024
 
 Sign in flow: 
