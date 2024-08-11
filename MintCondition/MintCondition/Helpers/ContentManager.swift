@@ -10,6 +10,7 @@ import UIKit
 
 class ContentManager {
     
+    static let serverEndpoint = "http://localhost:3000/"
     static let sharedManager = ContentManager()
     
     private var userProfile: User = User(fid: 0, username: "", pfp: "")

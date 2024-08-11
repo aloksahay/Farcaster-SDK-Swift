@@ -16,38 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5nC-ow-BAU">
-                                <rect key="frame" x="134" y="120" width="124.66666666666669" height="259.33333333333331"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5nC-ow-BAU">
+                                <rect key="frame" x="146.66666666666666" y="120" width="100" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoZ-qu-8fP">
-                                        <rect key="frame" x="0.0" y="0.0" width="124.66666666666667" height="124.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="LoZ-qu-8fP" secondAttribute="height" multiplier="1:1" id="SKr-TH-5Zh"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="MINT TOKEN"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="MINT NFT" titleAlignment="center"/>
                                         <connections>
                                             <action selector="mintTokenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2VI-up-yLt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8r5-dv-bUR">
-                                        <rect key="frame" x="0.0" y="134.66666666666666" width="124.66666666666667" height="124.66666666666666"/>
-                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="8r5-dv-bUR" secondAttribute="height" multiplier="1:1" id="PKF-S6-gVe"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="MINT NFT"/>
-                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="8r5-dv-bUR" firstAttribute="width" secondItem="8r5-dv-bUR" secondAttribute="height" multiplier="1:1" id="c9c-yp-D9D"/>
+                                    <constraint firstAttribute="width" constant="100" id="YSU-dt-kMa"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5nC-ow-BAU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="rmG-Eo-col"/>
+                            <constraint firstItem="5nC-ow-BAU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rtd-7z-YM0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zZ2-U8-18k"/>
                 </viewController>

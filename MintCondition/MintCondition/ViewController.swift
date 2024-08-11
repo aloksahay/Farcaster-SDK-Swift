@@ -12,11 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        ContentManager.sharedManager.signIn()
+        ContentManager.sharedManager.signIn()
     }
     @IBAction func mintTokenPressed(_ sender: Any) {
+     
         
-        
-        
+
     }
 }

@@ -15,16 +15,30 @@ dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
+const solc = require('solc');
+const bodyParser = require('body-parser');
+const fs = require('fs');
 
 export const hubUrl = "https://hub.pinata.cloud/v1";
 export const apiUrl = "https://api.pinata.cloud/v3";
 
-
 app.use(express.json());
+app.use(bodyParser.json());
 
 app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("Express + TypeScript Farcaster Server");
+  res.send("Express + TypeScript Server");
 });
+
+// compile Solidty contract from string
+
+app.post('/compile', (req, res) => {
+  const { name, symbol, initialSupply } = req.body;
+  if (!name || !symbol || !initialSupply) {
+      return res.status(400).send('Missing parameters');
+  }
+
+
+// Farcaster stuff
 
 app.get("/user",async (req: express.Request, res: express.Response) => {
   const { userFid } = req.query;
@@ -176,3 +190,23 @@ app.post("/message", async (req: express.Request, res: express.Response) => {
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
+
+
+// curl -X POST http://localhost:3000/compile -H "Content-Type: application/json" -d '{"source": "pragma solidity ^0.8.0; contract MyContract { function get() public pure returns (string memory) { return \"Hello, World!\"; } }"}'
+// curl -X POST http://localhost:3000/compile -H "Content-Type: application/json" -d '{"source": "pragma solidity ^0.8.20; import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; contract MyToken is ERC20 {constructor() ERC20("TOKEN_NAME", "TOKEN_SYMBOL") { _mint(msg.sender, TOTAL_SUPPLY * 10 ** decimals()); }}"}'
+
+
+
+
+
+
+
+// pragma solidity ^0.8.20;
+        
+// import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+// contract MyToken is ERC20 {
+//     constructor() ERC20("TOKEN_NAME", "TOKEN_SYMBOL") {
+//         _mint(msg.sender, TOTAL_SUPPLY * 10 ** decimals());
+//     }
+// }
