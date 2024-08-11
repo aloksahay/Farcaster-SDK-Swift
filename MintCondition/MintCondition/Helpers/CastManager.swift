@@ -46,6 +46,7 @@ struct PostBody: Codable {
     let castMessage: String
     let fid: String
     let parentUrl: String
+    let embedImg: String
 }
 
 class CastManager {
@@ -80,7 +81,7 @@ class CastManager {
         }.resume()
     }
     
-    func postCast(text: String, parentUrl: String) {
+    func postCast(text: String, parentUrl: String, imageURL: String) {
         var user_fid: String = ""
         var user_signer: String = ""
         if let fid = KeyValueStore.shared.value(forKey: "fid") as? String {
@@ -96,12 +97,13 @@ class CastManager {
         } else {
             print("signer_private not found")
         }
-        let url = URL(string: "http://192.168.1.103:3000/message")! //lo
+        let url = URL(string: "http://192.168.1.103:3000/message")!
         
         let postBody = PostBody(signer: user_signer,
                                 castMessage: text,
                                 fid: user_fid,
-                                parentUrl: parentUrl)
+                                parentUrl: parentUrl,
+                                embedImg: imageURL)
         
         let jsonEncoder = JSONEncoder()
         do {

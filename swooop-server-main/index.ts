@@ -15,30 +15,16 @@ dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
-const solc = require('solc');
-const bodyParser = require('body-parser');
-const fs = require('fs');
 
 export const hubUrl = "https://hub.pinata.cloud/v1";
 export const apiUrl = "https://api.pinata.cloud/v3";
 
+
 app.use(express.json());
-app.use(bodyParser.json());
 
 app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("Express + TypeScript Server");
+  res.send("Express + TypeScript Farcaster Server");
 });
-
-// compile Solidty contract from string
-
-app.post('/compile', (req, res) => {
-  const { name, symbol, initialSupply } = req.body;
-  if (!name || !symbol || !initialSupply) {
-      return res.status(400).send('Missing parameters');
-  }
-});
-
-// Farcaster stuff
 
 app.get("/user",async (req: express.Request, res: express.Response) => {
   const { userFid } = req.query;

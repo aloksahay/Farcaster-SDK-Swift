@@ -5,7 +5,8 @@ import { hubUrl, apiUrl } from "..";
 export const getFeed = async (channel: any, nextPage?: any) => {
   try {
     const result = await fetch(
-      `${apiUrl}/farcaster/casts?channel=${channel}&pageLimit=100&pageToken=${nextPage}`,
+      // `${apiUrl}/farcaster/casts?channel=${channel}&pageLimit=100&pageToken=${nextPage}`,
+      `${apiUrl}/farcaster/casts?channel=${channel}&pageLimit=100`,
       {
         headers: {
           Authorization: `Bearer ${process.env.PINATA_JWT}`,
