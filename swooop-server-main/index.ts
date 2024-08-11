@@ -36,7 +36,7 @@ app.post('/compile', (req, res) => {
   if (!name || !symbol || !initialSupply) {
       return res.status(400).send('Missing parameters');
   }
-
+});
 
 // Farcaster stuff
 
@@ -190,23 +190,3 @@ app.post("/message", async (req: express.Request, res: express.Response) => {
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
-
-
-// curl -X POST http://localhost:3000/compile -H "Content-Type: application/json" -d '{"source": "pragma solidity ^0.8.0; contract MyContract { function get() public pure returns (string memory) { return \"Hello, World!\"; } }"}'
-// curl -X POST http://localhost:3000/compile -H "Content-Type: application/json" -d '{"source": "pragma solidity ^0.8.20; import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; contract MyToken is ERC20 {constructor() ERC20("TOKEN_NAME", "TOKEN_SYMBOL") { _mint(msg.sender, TOTAL_SUPPLY * 10 ** decimals()); }}"}'
-
-
-
-
-
-
-
-// pragma solidity ^0.8.20;
-        
-// import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-
-// contract MyToken is ERC20 {
-//     constructor() ERC20("TOKEN_NAME", "TOKEN_SYMBOL") {
-//         _mint(msg.sender, TOTAL_SUPPLY * 10 ** decimals());
-//     }
-// }

@@ -50,7 +50,9 @@ class ContentManager {
                 print(signerPayload)
                 self.poll(token: signerPayload.pollingToken)
                 self.deepLinkUrl = signerPayload.deepLinkUrl
-                self.openURL()
+                DispatchQueue.main.async {
+                    self.openURL()
+                }
             case .failure(let error):
                 // Handle error
                 print(error)
@@ -65,11 +67,7 @@ class ContentManager {
     }
     
     func signOut() {
-        KeyValueStore.shared.removeValue(forKey: "fid")
-        KeyValueStore.shared.removeValue(forKey: "username")
-        KeyValueStore.shared.removeValue(forKey: "pfp")
-        KeyValueStore.shared.removeValue(forKey: "signer_approved")
-        KeyValueStore.shared.removeValue(forKey: "signer_private")
+        KeyValueStore.shared.clearAllKeys()
         loadUser()
 //        self.toggleProfileView() update profile
     }

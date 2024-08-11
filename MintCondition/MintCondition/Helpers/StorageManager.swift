@@ -21,6 +21,13 @@ class KeyValueStore {
     func removeValue(forKey key: String) {
         UserDefaults.standard.removeObject(forKey: key)
     }
+    
+    func clearAllKeys() {
+        for savedKey in ["fid","username","pfp","signer_approved","signer_private","polling_token"] {
+            UserDefaults.standard.removeObject(forKey: savedKey)
+        }
+    }
+    
 }
 
 

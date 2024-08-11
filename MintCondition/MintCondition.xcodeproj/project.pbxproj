@@ -11,6 +11,7 @@
 		5C1E398E2C661F3500FCDE82 /* Web3ContractABI in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1E398D2C661F3500FCDE82 /* Web3ContractABI */; };
 		5C1E39902C661F3500FCDE82 /* Web3PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1E398F2C661F3500FCDE82 /* Web3PromiseKit */; };
 		5C1E39922C661F5300FCDE82 /* Web3Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E39912C661F5300FCDE82 /* Web3Manager.swift */; };
+		5C1E39962C688E9400FCDE82 /* ChannelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E39952C688E9400FCDE82 /* ChannelManager.swift */; };
 		5CBEAD1F2C64DCF800C2049C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEAD1E2C64DCF800C2049C /* AppDelegate.swift */; };
 		5CBEAD212C64DCF800C2049C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEAD202C64DCF800C2049C /* SceneDelegate.swift */; };
 		5CBEAD232C64DCF800C2049C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEAD222C64DCF800C2049C /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		5C1E39912C661F5300FCDE82 /* Web3Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Manager.swift; sourceTree = "<group>"; };
+		5C1E39952C688E9400FCDE82 /* ChannelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelManager.swift; sourceTree = "<group>"; };
 		5CBEAD1B2C64DCF800C2049C /* MintCondition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MintCondition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBEAD1E2C64DCF800C2049C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CBEAD202C64DCF800C2049C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				5CBEAD342C64E54B00C2049C /* CastManager.swift */,
+				5C1E39952C688E9400FCDE82 /* ChannelManager.swift */,
 				5CBEAD352C64E54B00C2049C /* StorageManager.swift */,
 				5CBEAD332C64E54B00C2049C /* UserManager.swift */,
 				5CBEAD392C64F77D00C2049C /* ContentManager.swift */,
@@ -183,6 +186,7 @@
 				5CBEAD372C64E54B00C2049C /* CastManager.swift in Sources */,
 				5CBEAD212C64DCF800C2049C /* SceneDelegate.swift in Sources */,
 				5CBEAD3A2C64F77D00C2049C /* ContentManager.swift in Sources */,
+				5C1E39962C688E9400FCDE82 /* ChannelManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
