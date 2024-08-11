@@ -17,7 +17,19 @@ class ViewController: UIViewController {
     }
     @IBAction func mintTokenPressed(_ sender: Any) {
      
-        
+//        CastManager.shared.fetchCasts(channel: ChannelManager.sharedManager.selectedChannel.name) { result in
+//                    switch result {
+//                    case .success(let casts):
+//                        // Do something with the fetched posts
+//                        print("Casts fetched")
+//                    case .failure(let error):
+//                        // Handle error
+//                        print("Failed to fetch casts: \(error)")
+//                    }
+//                }
 
+        CastManager.shared.postCast(text: "Testing Wapcast API via MintMarket app", parentUrl: ChannelManager.sharedManager.selectedChannel.url)
+        
+        
     }
 }

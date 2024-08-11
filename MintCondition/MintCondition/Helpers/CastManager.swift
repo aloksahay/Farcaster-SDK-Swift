@@ -9,14 +9,25 @@ struct CastId: Codable {
 }
 
 struct EmbedCast: Codable {
-    let castId: CastId
+    let castId: CastId?
+    enum CodingKeys: String, CodingKey {
+        case castId = "cast_id"
+    }
 }
 
 struct EmbedUrl: Codable {
     let url: String
+    let metadata: Metadata?
 }
 
-
+struct Metadata: Codable {
+    let contentLength: String?
+    let contentType: String?
+    enum CodingKeys: String, CodingKey {
+        case contentLength = "content_length"
+        case contentType = "content_type"
+    }
+}
 
 struct Cast: Codable {
     let id: String
@@ -69,7 +80,7 @@ class CastManager {
         }.resume()
     }
     
-    func postCast(text: String, parentUrl: String) { 
+    func postCast(text: String, parentUrl: String) {
         var user_fid: String = ""
         var user_signer: String = ""
         if let fid = KeyValueStore.shared.value(forKey: "fid") as? String {
@@ -91,7 +102,7 @@ class CastManager {
                                 castMessage: text,
                                 fid: user_fid,
                                 parentUrl: parentUrl)
-
+        
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(postBody)
@@ -99,15 +110,15 @@ class CastManager {
             if String(data: jsonData, encoding: .utf8) != nil {
                 
                 var request = URLRequest(url: url)
-
+                
                 request.httpMethod = "POST"
-
+                
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
+                
                 request.httpBody = jsonData
-
+                
                 let session = URLSession.shared
-
+                
                 let task = session.dataTask(with: request) { data, response, error in
                     if let error = error {
                         print("Error: \(error)")
@@ -123,9 +134,9 @@ class CastManager {
                         print("Response: \(responseString)")
                     }
                 }
-
+                
                 task.resume()
-
+                
             }
         } catch {
             print("Error encoding PostBody to JSON:", error)
