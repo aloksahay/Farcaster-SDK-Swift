@@ -1,7 +1,5 @@
-# Mint Market
-Built for ETHGlobal Superhack 2024
 
-Sign in flow: 
+Warpcast sign in flow: 
 
 Reference to original article from Pinata: https://www.pinata.cloud/blog/how-to-sign-in-with-warpcast/?ref=pinata.cloud
 
