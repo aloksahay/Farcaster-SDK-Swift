@@ -1,5 +1,5 @@
 
-Warpcast sign in flow: 
+Farcaster SDK for Swift. Tip: videos on frames is not supported yet.
 
 Reference to original article from Pinata: https://www.pinata.cloud/blog/how-to-sign-in-with-warpcast/?ref=pinata.cloud
 
